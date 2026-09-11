@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;-webkit-font-smoothing:antialiased;}
+    a{color:#25D366;}
+    a:hover{color:#1fb256;}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+  </style>
+</helmet>
+
+<div style="font-family: 'Inter', sans-serif; color: #16253C; background: #F5F7F9; min-height: 100vh; position: relative; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: #0B2545; box-shadow: 0 2px 14px rgba(0,0,0,0.18);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid #9AA5B1; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: #9AA5B1;"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; line-height: 1.05;">
+          <span style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #FFFFFF; letter-spacing: 0.3px;">D'LEO</span>
+          <span style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 600; font-size: 11px; color: #9AA5B1; letter-spacing: 1.5px; text-transform: uppercase;">Punta de Eje</span>
+        </div>
+      </div>
+      <nav style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a href="#inicio" style="color: #E7EAEE; text-decoration: none; font-size: 14px; font-weight: 500;">Inicio</a>
+        <a href="#nosotros" style="color: #E7EAEE; text-decoration: none; font-size: 14px; font-weight: 500;">Nosotros</a>
+        <a href="#productos" style="color: #E7EAEE; text-decoration: none; font-size: 14px; font-weight: 500;">Productos</a>
+        <a href="#beneficios" style="color: #E7EAEE; text-decoration: none; font-size: 14px; font-weight: 500;">Beneficios</a>
+        <a href="#contacto" style="color: #E7EAEE; text-decoration: none; font-size: 14px; font-weight: 500;">Contacto</a>
+      </nav>
+      <button onClick="{{ openChat }}" style="display: flex; align-items: center; gap: 8px; background: transparent; border: 1.5px solid #25D366; color: #25D366; padding: 9px 16px; border-radius: 24px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap;">💬 Contactar por WhatsApp</button>
+    </div>
+  </header>
+
+  <section id="inicio" style="background: #0B2545; padding: 72px 24px 56px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center; justify-content: center;">
+    <div style="flex: 1 1 420px; max-width: 560px; display: flex; flex-direction: column; gap: 20px;">
+      <span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; background: oklch(75% 0.16 70); color: #1F1400; font-weight: 700; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; padding: 7px 14px; border-radius: 20px;">🛡️ Garantía en Repuestos</span>
+      <h1 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 48px); line-height: 1.08; color: #FFFFFF; margin: 0;">Especialistas en Puntas de Eje y Homocinéticas para Todo Tipo de Vehículos</h1>
+      <p style="font-size: 17px; line-height: 1.6; color: #C7D0DA; margin: 0; max-width: 480px;">Calidad, durabilidad y repuestos garantizados para mantener tu vehículo en marcha.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px;">
+        <button onClick="{{ openChat }}" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #FFFFFF; font-weight: 700; padding: 18px 30px; border-radius: 12px; font-size: 16px; border: none; cursor: pointer; box-shadow: 0 10px 24px rgba(37,211,102,0.35);">💬 Hacer Pedido por WhatsApp</button>
+      </div>
+    </div>
+    <div style="flex: 1 1 360px; max-width: 480px;">
+      <div style="width: 100%; aspect-ratio: 4/3; border-radius: 16px; border: 1px solid rgba(154,165,177,0.4); background: repeating-linear-gradient(135deg, #16253C 0px, #16253C 14px, #1B2E4A 14px, #1B2E4A 28px); display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box;">
+        <span style="font-family: 'Courier New', monospace; font-size: 13px; color: #9AA5B1; text-align: center; letter-spacing: 0.3px;">[ FOTO: Punta de eje / homocinética ]</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" style="background: #FFFFFF; padding: 64px 24px 24px;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 30px; color: #0B2545; margin: 0 0 14px;">Sobre D'Leo Punta de Eje</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #45526B; margin: 0;">Nos especializamos en la venta, reemplazo y distribución de puntas de eje para autos sedán, SUVs, camionetas y vehículos comerciales, con piezas compatibles con las principales marcas del mercado.</p>
+    </div>
+  </section>
+
+  <section id="productos" style="background: #FFFFFF; padding: 40px 24px 72px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <h3 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 22px; color: #0B2545; text-align: center; margin: 0 0 28px;">Lo Que Manejamos</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div style="background: #F5F7F9; border: 1px solid #E7EAEE; border-radius: 14px; padding: 28px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #0B2545; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px;">🚗</div>
+          <h4 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 18px; color: #0B2545; margin: 0 0 8px;">Puntas de Eje Homocinéticas</h4>
+          <p style="font-size: 14px; line-height: 1.6; color: #5A6478; margin: 0;">Para todas las marcas y modelos: Toyota, Honda, Nissan, Hyundai, Kia, Ford y más.</p>
+        </div>
+        <div style="background: #F5F7F9; border: 1px solid #E7EAEE; border-radius: 14px; padding: 28px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #0B2545; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px;">🛠️</div>
+          <h4 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 18px; color: #0B2545; margin: 0 0 8px;">Asesoría Técnica Directa</h4>
+          <p style="font-size: 14px; line-height: 1.6; color: #5A6478; margin: 0;">Te ayudamos a verificar la compatibilidad exacta con tu vehículo antes de comprar.</p>
+        </div>
+        <div style="background: #F5F7F9; border: 1px solid #E7EAEE; border-radius: 14px; padding: 28px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #0B2545; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px;">🚚</div>
+          <h4 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 18px; color: #0B2545; margin: 0 0 8px;">Envíos y Entregas Rápidas</h4>
+          <p style="font-size: 14px; line-height: 1.6; color: #5A6478; margin: 0;">Coordinación directa para entregas locales y envíos a todo el país.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios" style="background: #0B2545; padding: 64px 24px;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h3 style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 22px; color: #FFFFFF; text-align: center; margin: 0 0 32px;">¿Por Qué Elegirnos?</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; text-align: center;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <span style="font-size: 30px;">🛠️</span>
+          <span style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF;">Compatibilidad Garantizada</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <span style="font-size: 30px;">⚡</span>
+          <span style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF;">Respuesta Inmediata por WhatsApp</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <span style="font-size: 30px;">🛡️</span>
+          <span style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF;">Piezas de Alta Durabilidad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" style="background: #071A33; padding: 48px 24px 24px; color: #C7D0DA;">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px;">
+      <div>
+        <div style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 18px; color: #FFFFFF; margin-bottom: 10px;">D'Leo Punta de Eje</div>
+        <p style="font-size: 14px; line-height: 1.7; margin: 0;">Av. Principal, Santo Domingo, República Dominicana<br/>Tel/WhatsApp: +1 (809) 555-1234<br/>info@dleopuntaeje.com</p>
+      </div>
+      <div>
+        <div style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #FFFFFF; margin-bottom: 10px;">Horario de Atención</div>
+        <p style="font-size: 14px; line-height: 1.7; margin: 0;">Lunes a Viernes: 8:00 AM – 6:00 PM<br/>Sábado: 8:00 AM – 2:00 PM<br/>Domingo: Cerrado</p>
+      </div>
+      <div>
+        <div style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #FFFFFF; margin-bottom: 10px;">Contacto Rápido</div>
+        <button onClick="{{ openChat }}" style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #FFFFFF; border: none; padding: 10px 18px; border-radius: 22px; font-size: 14px; font-weight: 600; cursor: pointer;">💬 WhatsApp</button>
+      </div>
+    </div>
+    <div style="max-width: 1000px; margin: 32px auto 0; padding-top: 18px; border-top: 1px solid #16253C; font-size: 12px; color: #6E7B90; text-align: center;">© 2026 D'Leo Punta de Eje. Todos los derechos reservados.</div>
+  </footer>
+
+  <button onClick="{{ openChat }}" style="position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; border-radius: 50%; background: #25D366; box-shadow: 0 8px 22px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; z-index: 50; font-size: 26px;">💬</button>
+
+  <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeChat }}" style="position: fixed; inset: 0; background: rgba(7,26,51,0.55); z-index: 100; display: flex; align-items: flex-end; justify-content: flex-end; padding: 16px;">
+      <div onClick="{{ stopClick }}" style="width: 100%; max-width: 380px; height: min(82vh, 600px); background: #FFFFFF; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.4); animation: modalIn 0.22s ease;">
+        <div style="background: #075E54; padding: 14px 16px; display: flex; align-items: center; gap: 12px; color: #FFFFFF; flex-shrink: 0;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #0B2545; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0;">DL</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.3;">
+            <span style="font-weight: 600; font-size: 15px;">D'Leo Punta de Eje - Asistente</span>
+            <span style="font-size: 12px; color: #CDEFE4; display: flex; align-items: center; gap: 5px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #25D366; display: inline-block;"></span>En línea</span>
+          </div>
+          <button onClick="{{ closeChat }}" style="margin-left: auto; background: transparent; border: none; color: #FFFFFF; font-size: 18px; cursor: pointer;">✕</button>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; background: #ECE5DD;">
+          <sc-for list="{{ messages }}" as="msg" hint-placeholder-count="2">
+            <sc-if value="{{ msg.isBot }}" hint-placeholder-val="{{ false }}">
+              <div style="align-self: flex-start; background: #FFFFFF; padding: 10px 14px; border-radius: 2px 14px 14px 14px; max-width: 82%; font-size: 14px; line-height: 1.5; color: #1F2937; box-shadow: 0 1px 1px rgba(0,0,0,0.08); animation: fadeInUp 0.2s ease;">{{ msg.text }}</div>
+            </sc-if>
+            <sc-if value="{{ msg.isUser }}" hint-placeholder-val="{{ false }}">
+              <div style="align-self: flex-end; background: #DCF8C6; padding: 10px 14px; border-radius: 14px 2px 14px 14px; max-width: 82%; font-size: 14px; line-height: 1.5; color: #1F2937; animation: fadeInUp 0.2s ease;">{{ msg.text }}</div>
+            </sc-if>
+            <sc-if value="{{ msg.optionsActive }}" hint-placeholder-val="{{ false }}">
+              <div style="align-self: flex-start; max-width: 90%; display: flex; flex-direction: column; gap: 8px;">
+                <button onClick="{{ selectOption1 }}" style="text-align: left; background: #FFFFFF; border: 1.5px solid #25D366; color: #075E54; padding: 10px 14px; border-radius: 18px; font-size: 13.5px; font-weight: 600; cursor: pointer;">🚗 Cotizar punta de eje para mi vehículo</button>
+                <button onClick="{{ selectOption2 }}" style="text-align: left; background: #FFFFFF; border: 1.5px solid #25D366; color: #075E54; padding: 10px 14px; border-radius: 18px; font-size: 13.5px; font-weight: 600; cursor: pointer;">📍 Ubicación y Horarios</button>
+                <button onClick="{{ selectOption3 }}" style="text-align: left; background: #FFFFFF; border: 1.5px solid #25D366; color: #075E54; padding: 10px 14px; border-radius: 18px; font-size: 13.5px; font-weight: 600; cursor: pointer;">📞 Hablar con un asesor</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ msg.isInput }}" hint-placeholder-val="{{ false }}">
+              <div style="align-self: flex-start; max-width: 90%; display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 12px; border-radius: 12px; box-shadow: 0 1px 1px rgba(0,0,0,0.08);">
+                <input value="{{ vehicleInput }}" onChange="{{ onVehicleChange }}" placeholder="Ej: Toyota Corolla 2018" style="border: 1px solid #E7EAEE; border-radius: 8px; padding: 10px 12px; font-size: 14px; outline: none; font-family: inherit;" />
+                <button onClick="{{ sendVehicle }}" style="background: #25D366; color: #FFFFFF; border: none; border-radius: 8px; padding: 10px; font-weight: 600; font-size: 14px; cursor: pointer;">Enviar</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ msg.isLink }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ msg.linkUrl }}" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #FFFFFF; text-decoration: none; padding: 10px 16px; border-radius: 22px; font-size: 14px; font-weight: 600;">💬 {{ msg.linkLabel }}</a>
+            </sc-if>
+            <sc-if value="{{ msg.isBack }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ backToMenu }}" style="align-self: flex-start; background: #FFFFFF; border: 1.5px solid #0B2545; color: #0B2545; padding: 9px 14px; border-radius: 18px; font-size: 13px; font-weight: 600; cursor: pointer;">⬅ Volver al menú</button>
+            </sc-if>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  WA_NUMBER = '18095551234';
+
+  state = {
+    chatOpen: false,
+    vehicleInput: '',
+    messages: [
+      { kind: 'bot', text: "¡Hola! 👋 Bienvenido a D'Leo Punta de Eje. ¿En qué podemos ayudarte hoy?" },
+      { kind: 'options' }
+    ]
+  };
+
+  buildWaLink(text) {
+    return `https://wa.me/${this.WA_NUMBER}?text=${encodeURIComponent(text)}`;
+  }
+
+  openChat = () => this.setState({ chatOpen: true });
+  closeChat = () => this.setState({ chatOpen: false });
+  stopClick = (e) => e.stopPropagation();
+  onVehicleChange = (e) => this.setState({ vehicleInput: e.target.value });
+
+  selectOption = (n) => {
+    this.setState((s) => {
+      const msgs = s.messages.slice();
+      if (n === 1) {
+        msgs.push({ kind: 'user', text: '🚗 Cotizar punta de eje para mi vehículo' });
+        msgs.push({ kind: 'bot', text: 'Excelente! Por favor indícanos: Marca, Modelo y Año de tu vehículo para verificar disponibilidad y precio de inmediato.' });
+        msgs.push({ kind: 'input' });
+      } else if (n === 2) {
+        msgs.push({ kind: 'user', text: '📍 Ubicación y Horarios' });
+        msgs.push({ kind: 'bot', text: '📍 Av. Principal, Santo Domingo, República Dominicana.' });
+        msgs.push({ kind: 'bot', text: '🕒 Lunes a Viernes 8:00 AM–6:00 PM. Sábado 8:00 AM–2:00 PM.' });
+        msgs.push({ kind: 'back' });
+      } else if (n === 3) {
+        msgs.push({ kind: 'user', text: '📞 Hablar con un asesor' });
+        msgs.push({ kind: 'bot', text: 'Te conectamos con un asesor humano ahora mismo. Toca el botón para continuar en WhatsApp.' });
+        msgs.push({ kind: 'link', label: 'Abrir WhatsApp', url: this.buildWaLink('Hola, quisiera hablar con un asesor sobre puntas de eje.') });
+      }
+      return { messages: msgs };
+    });
+  };
+
+  selectOption1 = () => this.selectOption(1);
+  selectOption2 = () => this.selectOption(2);
+  selectOption3 = () => this.selectOption(3);
+
+  sendVehicle = () => {
+    this.setState((s) => {
+      const text = s.vehicleInput.trim() || 'mi vehículo';
+      const msgs = s.messages.slice();
+      msgs.push({ kind: 'user', text });
+      msgs.push({ kind: 'bot', text: '¡Gracias! Estamos verificando disponibilidad. Confirma tu pedido con nuestro asesor en WhatsApp para precio y entrega inmediata.' });
+      msgs.push({ kind: 'link', label: 'Confirmar por WhatsApp', url: this.buildWaLink('Hola, quiero cotizar una punta de eje para: ' + text) });
+      return { messages: msgs, vehicleInput: '' };
+    });
+  };
+
+  backToMenu = () => {
+    this.setState((s) => {
+      const msgs = s.messages.slice();
+      msgs.push({ kind: 'bot', text: '¿Necesitas algo más? Elige una opción:' });
+      msgs.push({ kind: 'options' });
+      return { messages: msgs };
+    });
+  };
+
+  renderVals() {
+    const raw = this.state.messages;
+    let lastOptionsIndex = -1;
+    raw.forEach((m, i) => { if (m.kind === 'options') lastOptionsIndex = i; });
+
+    const messages = raw.map((m, i) => ({
+      text: m.text || '',
+      isBot: m.kind === 'bot',
+      isUser: m.kind === 'user',
+      isInput: m.kind === 'input',
+      isLink: m.kind === 'link',
+      isBack: m.kind === 'back',
+      optionsActive: m.kind === 'options' && i === lastOptionsIndex,
+      linkUrl: m.url || '',
+      linkLabel: m.label || ''
+    }));
+
+    return {
+      messages,
+      chatOpen: this.state.chatOpen,
+      vehicleInput: this.state.vehicleInput,
+      openChat: this.openChat,
+      closeChat: this.closeChat,
+      stopClick: this.stopClick,
+      selectOption1: this.selectOption1,
+      selectOption2: this.selectOption2,
+      selectOption3: this.selectOption3,
+      sendVehicle: this.sendVehicle,
+      onVehicleChange: this.onVehicleChange,
+      backToMenu: this.backToMenu
+    };
+  }
+}
+</script>
+</body>
+</html>
